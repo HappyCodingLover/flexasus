@@ -1,0 +1,57 @@
+{
+  "name": "@flexasus/storybook-react",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build:storybook": "build-storybook -s public",
+    "storybook": "npm run build:css && start-storybook -p 6006",
+    "build:css": "postcss tailwind.css -o index.css"
+  },
+  "dependencies": {
+    "app": "*",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-native-web": "0.17.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/addon-react-native-web": "0.0.8-canary.13.d8a51bb.0",
+    "@storybook/node-logger": "^6.3.8",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/builder-webpack5": "^6.3.12",
+    "@storybook/manager-webpack5": "^6.3.12",
+    "@storybook/react": "^6.3.8",
+    "@types/node": "16.11.7",
+    "@types/react": "17.0.35",
+    "autoprefixer": "^9",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-react-native-web": "^0.17.5",
+    "eslint": "7",
+    "eslint-config-next": "12.0.4",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "storybook-formik": "^2.1.8",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "typescript": "4.5.2"
+  }
+}
